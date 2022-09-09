@@ -84,12 +84,18 @@ class Handler(watchdog.events.PatternMatchingEventHandler):
     def on_created(self, event):
         print("Watchdog received created event - % s." % event.src_path)
         # Event is created, you can process it now
-        doit(event.src_path)
+        try:
+            doit(event.src_path)
+        except:
+            pass
   
     def on_modified(self, event):
         print("Watchdog received modified event - % s." % event.src_path)
         # Event is modified, you can process it now
-        doit(event.src_path)
+        try:
+            doit(event.src_path)
+        except:
+            pass
   
   
 if __name__ == '__main__':
