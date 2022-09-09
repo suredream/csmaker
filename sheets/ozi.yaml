@@ -1,40 +1,30 @@
 concepts:
-  Project (zotero or repo):
-    definition: move to
-  Note (zotero):
-    2webchat: "https://github.com/chenyukang/markdown-to-wechat"
-  Entry (zotero):
-    include: file, url
-  Page (obsidian):
-    definition: obsidian
-
-workflow:
-  收集: 
-    web extension: -> Save to Zotero
-  检索分类:
-    collection: 
-    tagging system: Ongoing Archive
-  管理:
-    Project: Abstract + Child Notes
-    Document: Attachment
-  GTD:
-    Task: task in obsidian
-  Archive:
-    DELETE: move to
+  Apps:
+    Project: zotero or github
+    DB Entry: zotero
+    Note: zotero
+    Page: obsidian
+    
   Workflow:
-    2webchat: <a href="https://github.com">link</a>
-    Storage:
+    Collection: Save to Zotero
+    Tagging: Ongoing Archive
+    Archive: ":DELETE:"
+    GTD: obsidian task
+src:
+  blog:
+    ruanyifeng: https://www.ruanyifeng.com/blog/
+    medium: https://medium.com/
+  Collect Guide:
+    Collection:
+    Tag: 
+    Note: 
 
 resources:
-  精: 
-    conda install pandas: 获得 pandas 的最佳方式是通过 conda
-    "python3 -m pip install --upgrade pandas": 通过 PyPI
-    "pip install -i htt­ps:­//p­ypi.tu­na.t­si­ngh­ua.e­du.cn­/si­mpl­e g­event": 使用清华镜像安装
   关键缩写和包导入:
     df: 任意的Pandas DataFr­ame对象
     s: 任意的Pandas Series对象
-  管理:
-    Project: Abstract + Child Notes
+  git:
+    commit: When reach a milestone
     Document: Attachment
   GTD:
     Task: task in obsidian

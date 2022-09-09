@@ -1,0 +1,11 @@
+set-up:
+  magic: 
+    "%d": display methods
+    "%n": notify slack message
+    shortcut: keyboard.json
+coding:
+  pandas:
+
+  coding:
+    black: 
+    pylint:
