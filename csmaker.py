@@ -1,6 +1,10 @@
 import argparse
 import yaml
 from lxml import etree
+import watchdog.events
+import watchdog.observers
+import time
+import argparse
 
 def addTag(parent, name, **attr_dic):
     ele = etree.SubElement(parent, name)
@@ -44,6 +48,8 @@ def add_note(parent, note):
 
 
 def doit(infile):
+    tree = etree.parse("template.html")
+    article = tree.xpath("//article")[0]
     with open(infile) as file:
         content = yaml.load(file, Loader=yaml.FullLoader)
 
@@ -68,12 +74,36 @@ def doit(infile):
     with open(infile.replace(".yaml", ".html"), "wb") as f:
         tree.getroot().getroottree().write(f, pretty_print=True)
 
-
+ 
+class Handler(watchdog.events.PatternMatchingEventHandler):
+    def __init__(self):
+        # Set the patterns for PatternMatchingEventHandler
+        watchdog.events.PatternMatchingEventHandler.__init__(self, patterns=['*.yaml'],
+                                                             ignore_directories=True, case_sensitive=False)
+  
+    def on_created(self, event):
+        print("Watchdog received created event - % s." % event.src_path)
+        # Event is created, you can process it now
+        doit(event.src_path)
+  
+    def on_modified(self, event):
+        print("Watchdog received modified event - % s." % event.src_path)
+        # Event is modified, you can process it now
+        doit(event.src_path)
+  
+  
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='csmaker')
-    parser.add_argument('infile', type=str, help='input markdown')
+    parser.add_argument('--src', nargs='?', type=str, default ='sheets', help='source path')
     args = parser.parse_args()
 
-    tree = etree.parse("template.html")
-    article = tree.xpath("//article")[0]
-    doit(args.infile)
+    event_handler = Handler()
+    observer = watchdog.observers.Observer()
+    observer.schedule(event_handler, path=args.src, recursive=True)
+    observer.start()
+    try:
+        while True: 
+            time.sleep(1)
+    except KeyboardInterrupt:
+        observer.stop()
+    observer.join()

@@ -6,4 +6,7 @@ create cheatsheets html from plain markdown
 # Features
 
 # Todo
-- local css
+- [x] local css
+- [ ] watchlog
+- [ ] save to pdf
+- [ ] integrated with zotero

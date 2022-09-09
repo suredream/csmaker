@@ -1,9 +1,12 @@
-concept:
-  Archive:
-    DELETE: move to
-  Workflow:
+concepts:
+  Project (zotero or repo):
+    definition: move to
+  Note (zotero):
     2webchat: "https://github.com/chenyukang/markdown-to-wechat"
-    Storage:
+  Entry (zotero):
+    include: file, url
+  Page (obsidian):
+    definition: obsidian
 
 workflow:
   收集: 
