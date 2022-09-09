@@ -9,9 +9,6 @@ def add_attrs(ele, **attr_dic):
         ele.attrib[k]=v
     return ele
 
-# def new_col(parent):
-
-
 def new_section(parent, header):
     cell = add_attrs(parent, width="32%", valign="top", _class="cheat_sheet_output_sortable cheat_sheet_output_column_1")
     section = etree.SubElement(cell,'section')
@@ -24,7 +21,7 @@ def new_section(parent, header):
         block = etree.SubElement(section,'div')
         block = add_attrs(block, _class="cheat_sheet_output_block")
         if True:
-            table = etree.SubElement(parent, "table")
+            table = etree.SubElement(section, "table")
             table = add_attrs(table, border="0", cellspacing="0", cellpadding="0", _class="cheat_sheet_output_twocol")
 
     return table
@@ -52,25 +49,30 @@ def doit(infile):
     table = etree.SubElement(article, "table")
     table = add_attrs(table, border="0", cellspacing="0", width="100%", cellpadding="0", _class="cheat_sheet_output")
     row = etree.SubElement(table, 'tr') 
-    for _, col in content.items():
+    for _, col in enumerate(content):#.items():
+        if _:
+            spacer = etree.SubElement(row, 'td')
+            spacer = add_attrs(spacer, _class="cheat_sheet_output_column_spacer",width="2%")
+            # spacer.text = "&nbsp;"
         div_col = etree.SubElement(row, 'td')
-        if col:
-            for header, items in col.items():
+        if content[col]:
+            for header, items in content[col].items():
                 if items:
                     div_section = new_section(div_col, header)
-            #         # block = etree.Element("table")
                     for i, key in enumerate(items):
                         add_items(div_section, i % 2, key, items[key])
                 else: # note
                     add_note(div_col, header)
-    with open("out.html", "wb") as f:
+    
+
+    with open(infile.replace(".yaml",".html"), "wb") as f:
         tree.getroot().getroottree().write(f, pretty_print=True)
 
-# if __name__ == '__main__':
-    # parser = argparse.ArgumentParser(description='csmaker')
-    # parser.add_argument('infile', type=str, help='input markdown')
-    # args = parser.parse_args()
+if __name__ == '__main__':
+    parser = argparse.ArgumentParser(description='csmaker')
+    parser.add_argument('infile', type=str, help='input markdown')
+    args = parser.parse_args()
 
-tree = etree.parse("template.html")
-article = tree.xpath("//article")[0]
-doit('example.yaml')
+    tree = etree.parse("template.html")
+    article = tree.xpath("//article")[0]
+    doit(args.infile)

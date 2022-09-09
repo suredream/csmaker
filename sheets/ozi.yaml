@@ -1,0 +1,42 @@
+concept:
+  Archive:
+    DELETE: move to
+  Workflow:
+    2webchat: "https://github.com/chenyukang/markdown-to-wechat"
+    Storage:
+
+workflow:
+  收集: 
+    web extension: -> Save to Zotero
+  检索分类:
+    collection: 
+    tagging system: Ongoing Archive
+  管理:
+    Project: Abstract + Child Notes
+    Document: Attachment
+  GTD:
+    Task: task in obsidian
+  Archive:
+    DELETE: move to
+  Workflow:
+    2webchat: <a href="https://github.com">link</a>
+    Storage:
+
+resources:
+  精: 
+    conda install pandas: 获得 pandas 的最佳方式是通过 conda
+    "python3 -m pip install --upgrade pandas": 通过 PyPI
+    "pip install -i htt­ps:­//p­ypi.tu­na.t­si­ngh­ua.e­du.cn­/si­mpl­e g­event": 使用清华镜像安装
+  关键缩写和包导入:
+    df: 任意的Pandas DataFr­ame对象
+    s: 任意的Pandas Series对象
+  管理:
+    Project: Abstract + Child Notes
+    Document: Attachment
+  GTD:
+    Task: task in obsidian
+  Archive:
+    DELETE: move to
+  Workflow:
+    2webchat: "https://github.com/chenyukang/markdown-to-wechat"
+    Storage:
