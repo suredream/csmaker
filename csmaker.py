@@ -1,12 +1,5 @@
 import argparse
-import os
 import yaml
-
-
-
-
-#     doit(args.infile)
-import sys
 from lxml import etree
 
 def add_attrs(ele, **attr_dic):
@@ -16,59 +9,60 @@ def add_attrs(ele, **attr_dic):
         ele.attrib[k]=v
     return ele
 
+# def new_col(parent):
 
-def new_col(parent):
-    table = etree.SubElement(parent, "table")
-    table = add_attrs(table, border="0", cellspacing="0", width="100%", cellpadding="0", _class="cheat_sheet_output")
-    row = etree.SubElement(table, 'tr')
-    cell = etree.SubElement(row, 'td')
-    return cell
 
-def new_header(parent, header):
-    section = etree.SubElement(parent,'section')
+def new_section(parent, header):
+    cell = add_attrs(parent, width="32%", valign="top", _class="cheat_sheet_output_sortable cheat_sheet_output_column_1")
+    section = etree.SubElement(cell,'section')
     section = add_attrs(section, _class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol",style="z-index: 30; page-break-inside: avoid;" )
-    h3 = etree.SubElement(section, 'h3')
-    h3 = add_attrs(h3, _class="cheat_sheet_output_title")
-    h3.text = header
-    block = etree.SubElement(section,'div')
-    block = add_attrs(block, _class="cheat_sheet_output_block")
+    if True:
+        h3 = etree.SubElement(section, 'h3')
+        h3 = add_attrs(h3, _class="cheat_sheet_output_title")
+        h3.text = header
 
-    table2 = etree.SubElement(block, "table")
-    table2 = add_attrs(table2, border="0", cellspacing="0", cellpadding="0", _class="cheat_sheet_output_twocol")
-    row2 = etree.SubElement(table2, 'tr')
-    row2 = add_attrs(row2, _class="altrow countrow")
+        block = etree.SubElement(section,'div')
+        block = add_attrs(block, _class="cheat_sheet_output_block")
+        if True:
+            table = etree.SubElement(parent, "table")
+            table = add_attrs(table, border="0", cellspacing="0", cellpadding="0", _class="cheat_sheet_output_twocol")
 
-    return row2
+    return table
 
-    return cell2
-
-def add_items(parent, *args):
+def add_items(parent, flag, *args):
+    row_class = ["countrow","altrow countrow"]
+    row = etree.SubElement(parent, 'tr')
+    row = add_attrs(row, _class=row_class[flag])
     for i, value in enumerate(args):
-        cell2 = etree.SubElement(parent, 'td')
-        cell2 = add_attrs(cell2, valign="top", _class=f"cheat_sheet_output_cell_{i+1}")
-        item = etree.SubElement(cell2, 'div')
+        cell = etree.SubElement(row, 'td')
+        cell = add_attrs(cell, valign="top", _class=f"cheat_sheet_output_cell_{i+1}")
+        item = etree.SubElement(cell, 'div')
         item = add_attrs(item, style="padding: 3px 8px;")
         item.text = value
 
+def add_note(parent, note):
+    div = etree.SubElement(parent, 'div')
+    div = add_attrs(div, _class="cheat_sheet_note", style="padding: 3px 8px;")
+    div.text = note
 
 def doit(infile):
     with open(infile) as file:
         content = yaml.load(file, Loader=yaml.FullLoader)
 
-    for i_col, col in content.items():
-        ip = new_col(article) 
-        # colTable = add_attrs(table, border="0", cellspacing="0", width="100%", cellpadding="0", _class="cheat_sheet_output")
+    table = etree.SubElement(article, "table")
+    table = add_attrs(table, border="0", cellspacing="0", width="100%", cellpadding="0", _class="cheat_sheet_output")
+    row = etree.SubElement(table, 'tr') 
+    for _, col in content.items():
+        div_col = etree.SubElement(row, 'td')
         if col:
             for header, items in col.items():
-                # add header
-                ip = new_header(ip, header)
-                # block = etree.Element("table")
-                for key, value in items.items():
-                    cellTable = etree.Element("table")
-                    add_items(ip, key, value)
-                    # print(key, value)
-        #         colTable.append(block)
-        # article.append(colTable)
+                if items:
+                    div_section = new_section(div_col, header)
+            #         # block = etree.Element("table")
+                    for i, key in enumerate(items):
+                        add_items(div_section, i % 2, key, items[key])
+                else: # note
+                    add_note(div_col, header)
     with open("out.html", "wb") as f:
         tree.getroot().getroottree().write(f, pretty_print=True)
 

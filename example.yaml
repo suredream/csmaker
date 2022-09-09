@@ -1,0 +1,26 @@
+col1:
+  pandas安装: 
+    conda install pandas: 获得 pandas 的最佳方式是通过 conda
+    "python3 -m pip install --upgrade pandas": 通过 PyPI
+    "pip install -i htt­ps:­//p­ypi.tu­na.t­si­ngh­ua.e­du.cn­/si­mpl­e g­event": 使用清华镜像安装
+  国内推荐使用­清华镜像安装: ''
+  关键缩写和包导入:
+    df: 任意的Pandas DataFr­ame对象
+    s: 任意的Pandas Series对象
+  
+col2:
+  pandas安装: 
+    conda install pandas: 获得 pandas 的最佳方式是通过 conda
+    "python3 -m pip install --upgrade pandas": 通过 PyPI
+    "pip install -i htt­ps:­//p­ypi.tu­na.t­si­ngh­ua.e­du.cn­/si­mpl­e g­event": 使用清华镜像安装
+  关键缩写和包导入:
+    df: 任意的Pandas DataFr­ame对象
+    s: 任意的Pandas Series对象
+col3:
+  pandas安装: 
+    conda install pandas: 获得 pandas 的最佳方式是通过 conda
+    "python3 -m pip install --upgrade pandas": 通过 PyPI
+    "pip install -i htt­ps:­//p­ypi.tu­na.t­si­ngh­ua.e­du.cn­/si­mpl­e g­event": 使用清华镜像安装
+  关键缩写和包导入:
+    df: 任意的Pandas DataFr­ame对象
+    s: 任意的Pandas Series对象

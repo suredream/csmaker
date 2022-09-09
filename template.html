@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns#">
+  <head>
+    <title>
+     pandas Cheat Sheet
+    </title>
+    <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
+    <meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+    <meta content="text/css" http-equiv="Content-Style-Type"/>
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible"/>
+    <base href="https://cheatography.com/"/>
+    <link href="favicon.png" rel="shortcut icon"/>
+    <link href="/images/cheatography-iphone.png" rel="apple-touch-icon"/>
+    <link href="https://cheatography.com/explore/new/rss/" rel="alternate" title="New Cheat Sheets RSS feed." type="application/rss+xml"/>
+    <link href="https://media.cheatography.com/styles/styles.scss.css?v=19" rel="stylesheet"/>
+    <link as="style" href="https://media.cheatography.com/styles/font-awesome.min.css?v=3" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+    <noscript>
+     <link href="https://media.cheatography.com/styles/font-awesome.min.css?v=2" rel="stylesheet"/>
+    </noscript>
+    <link as="style" href="https://media.cheatography.com/styles/bootstrap-tour-standalone.min.css" onload="this.onload=null;this.rel='stylesheet'" rel="preload"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github-gist.min.css" rel="stylesheet"/>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js">
+    </script>
+   </head>
+
+<body class="page-cheatsheet style1">
+  <div id="mobile_wrap_outer">
+    <div id="mobile_wrap_inner">
+      <div id="content" itemtype="http://schema.org/Course">
+        <div id="content_inner">
+          <div id="body_wide">
+            <div id="body_wide_inner">
+              <div id="body_wide_shadow">
+                <div class="clear"></div>
+                <style type="text/css">
+                  #subsection_programming {
+                    display: none;
+                  }
+
+                  #subsection_software {
+                    display: none;
+                  }
+
+                  #subsection_business {
+                    display: none;
+                  }
+
+                  #subsection_education {
+                    display: none;
+                  }
+
+                  #subsection_home {
+                    display: none;
+                  }
+
+                  #subsection_games {
+                    display: none;
+                  }
+
+                  h2,
+                  .sidebar_box h4 {
+                    border-bottom: 3px solid #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper {
+                    background: #1A10A3;
+                    border-bottom: 3px solid #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper a,
+                  .cheat_sheet_output_wrapper a:visited,
+                  .cheat_sheet_output_wrapper a:focus,
+                  .cheat_sheet_output_wrapper a:link,
+                  .cheat_sheet_output_wrapper a:hover {
+                    color: #1A10A3;
+                    border-color: #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td,
+                  .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #F0F0F9;
+                  }
+
+                  .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    border-top: 3px solid #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                    color: #F0F0F9;
+                  }
+
+                  /* Breaks */
+                  .cheat_sheet_output_column_columnbreak,
+                  .cheat_sheet_output_column_pagebreak {
+                    border-color: #eee;
+                  }
+
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak .cheat_sheet_output_block,
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak .cheat_sheet_output_block {
+                    border-top: none;
+                  }
+
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak h3.cheat_sheet_output_title,
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak h3.cheat_sheet_output_title {
+                    color: #999;
+                    background: #eee;
+                  }
+
+                  /* Buttons */
+                  .button_add,
+                  .button_add:visited,
+                  .button_add:active,
+                  .button_add:hover,
+                  .draft_notice {
+                    background-color: #1A10A3;
+                    border: 1px solid #1A10A3;
+                    color: #F0F0F9;
+                  }
+
+                  .button_add:hover {
+                    background-color: #F0F0F9;
+                    color: #1A10A3;
+                  }
+
+                  .download_menu {
+                    background-color: #1A10A3;
+                  }
+
+                  #content #content_inner,
+                  #cs_menu {
+                    border-top-color: #1A10A3;
+                  }
+
+                  #content #content_inner {
+                    /*top: -3px;*/
+                    border: none;
+                  }
+
+                  #menubar .inner {
+                    border-top-color: #1A10A3;
+                  }
+
+                  .cheat_sheet_output_block div {
+                    border-color: #1A10A3 !important;
+                  }
+
+                  .footer_popup {
+                    background-color: #F0F0F9;
+                    box-shadow: 0 0 3px #1A10A3;
+                  }
+
+
+                  /* style 2 */
+
+                  .style2,
+                  .style2 #content #content_inner {
+                    background: #F0F0F9;
+                  }
+
+                  .style2 #cs_menu .download_menu {
+                    border-bottom: 2px solid #F0F0F9;
+                  }
+
+                  .style2 #tag_list a {
+                    color: #1A10A3;
+                    border-color: #1A10A3;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr td,
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #F0F0F9;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr td {
+                    border: 0px solid #1A10A3;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    border-top: 1px solid #F0F0F9;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                    color: #1A10A3;
+                  }
+
+                  .style2 .cheat_sheet_output_block div {
+                    border-color: #F0F0F9 !important;
+                  }
+
+
+                  .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                    padding: 6px 13px;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper {
+                    border-bottom: none;
+                    background: none;
+                    margin-bottom: 25px;
+                  }
+
+                  #downloads {
+                    background: none;
+                    border-top: none;
+                    border-bottom: none;
+                  }
+
+                  .style2 .commentblock {
+                    background: none;
+                    margin-bottom: 35px;
+                  }
+
+                  .style2 .commentblock .commenter {
+                    background: none;
+                  }
+
+                  .style2 .commentblock .commentext {
+                    background: #fff;
+                    border-radius: 3px;
+                    padding: 1em;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block {
+                    padding: 5px;
+                    border-radius: 3px;
+                    background: #fff;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td,
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #fff;
+                  }
+                </style>
+                <article></article>
+                <div class="clear" style="margin-top: 50px;"></div>
+                <div class="clear" style="margin-bottom: 50px;"></div>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

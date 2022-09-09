@@ -1,0 +1,1202 @@
+<!DOCTYPE html>
+<html lang="zh" prefix="og: http://ogp.me/ns#">
+<head>
+  <title>pandas Cheat Sheet</title>
+  <meta content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=0"
+    name="viewport">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <base href="https://cheatography.com/">
+  <link rel="shortcut icon" href="favicon.png">
+  <link rel="apple-touch-icon" href="/images/cheatography-iphone.png">
+  <link rel="alternate" type="application/rss+xml" title="New Cheat Sheets RSS feed."
+    href="https://cheatography.com/explore/new/rss/">
+  <link href="https://media.cheatography.com/styles/styles.scss.css?v=19" rel="stylesheet">
+  <link rel="preload" href="https://media.cheatography.com/styles/font-awesome.min.css?v=3" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link href="https://media.cheatography.com/styles/font-awesome.min.css?v=2" rel="stylesheet">
+  </noscript>
+  <link rel="preload" href="https://media.cheatography.com/styles/bootstrap-tour-standalone.min.css" as="style"
+    onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/styles/github-gist.min.css">
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.1/highlight.min.js"></script>
+</head>
+
+<body class="page-cheatsheet style1">
+  <div id="mobile_wrap_outer">
+    <div id="mobile_wrap_inner">
+      <div id="content" itemscope itemtype="http://schema.org/Course">
+        <div id="content_inner">
+          <div id="body_wide">
+            <div id="body_wide_inner">
+              <div id="body_wide_shadow">
+                <div class="clear"></div>
+                <style type="text/css">
+                  #subsection_programming {
+                    display: none;
+                  }
+
+                  #subsection_software {
+                    display: none;
+                  }
+
+                  #subsection_business {
+                    display: none;
+                  }
+
+                  #subsection_education {
+                    display: none;
+                  }
+
+                  #subsection_home {
+                    display: none;
+                  }
+
+                  #subsection_games {
+                    display: none;
+                  }
+
+                  h2,
+                  .sidebar_box h4 {
+                    border-bottom: 3px solid #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper {
+                    background: #1A10A3;
+                    border-bottom: 3px solid #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper a,
+                  .cheat_sheet_output_wrapper a:visited,
+                  .cheat_sheet_output_wrapper a:focus,
+                  .cheat_sheet_output_wrapper a:link,
+                  .cheat_sheet_output_wrapper a:hover {
+                    color: #1A10A3;
+                    border-color: #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td,
+                  .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #F0F0F9;
+                  }
+
+                  .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    border-top: 3px solid #1A10A3;
+                  }
+
+                  .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                    color: #F0F0F9;
+                  }
+
+                  /* Breaks */
+                  .cheat_sheet_output_column_columnbreak,
+                  .cheat_sheet_output_column_pagebreak {
+                    border-color: #eee;
+                  }
+
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak .cheat_sheet_output_block,
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak .cheat_sheet_output_block {
+                    border-top: none;
+                  }
+
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_columnbreak h3.cheat_sheet_output_title,
+                  .cheat_sheet_output_wrapper.cheat_sheet_output_column_pagebreak h3.cheat_sheet_output_title {
+                    color: #999;
+                    background: #eee;
+                  }
+
+                  /* Buttons */
+                  .button_add,
+                  .button_add:visited,
+                  .button_add:active,
+                  .button_add:hover,
+                  .draft_notice {
+                    background-color: #1A10A3;
+                    border: 1px solid #1A10A3;
+                    color: #F0F0F9;
+                  }
+
+                  .button_add:hover {
+                    background-color: #F0F0F9;
+                    color: #1A10A3;
+                  }
+
+                  .download_menu {
+                    background-color: #1A10A3;
+                  }
+
+                  #content #content_inner,
+                  #cs_menu {
+                    border-top-color: #1A10A3;
+                  }
+
+                  #content #content_inner {
+                    /*top: -3px;*/
+                    border: none;
+                  }
+
+                  #menubar .inner {
+                    border-top-color: #1A10A3;
+                  }
+
+                  .cheat_sheet_output_block div {
+                    border-color: #1A10A3 !important;
+                  }
+
+                  .footer_popup {
+                    background-color: #F0F0F9;
+                    box-shadow: 0 0 3px #1A10A3;
+                  }
+
+
+                  /* style 2 */
+
+                  .style2,
+                  .style2 #content #content_inner {
+                    background: #F0F0F9;
+                  }
+
+                  .style2 #cs_menu .download_menu {
+                    border-bottom: 2px solid #F0F0F9;
+                  }
+
+                  .style2 #tag_list a {
+                    color: #1A10A3;
+                    border-color: #1A10A3;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr td,
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #F0F0F9;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr td {
+                    border: 0px solid #1A10A3;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    border-top: 1px solid #F0F0F9;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                    color: #1A10A3;
+                  }
+
+                  .style2 .cheat_sheet_output_block div {
+                    border-color: #F0F0F9 !important;
+                  }
+
+
+                  .style2 .cheat_sheet_output_wrapper h3.cheat_sheet_output_title {
+                    padding: 6px 13px;
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper {
+                    border-bottom: none;
+                    background: none;
+                    margin-bottom: 25px;
+                  }
+
+                  #downloads {
+                    background: none;
+                    border-top: none;
+                    border-bottom: none;
+                  }
+
+                  .style2 .commentblock {
+                    background: none;
+                    margin-bottom: 35px;
+                  }
+
+                  .style2 .commentblock .commenter {
+                    background: none;
+                  }
+
+                  .style2 .commentblock .commentext {
+                    background: #fff;
+                    border-radius: 3px;
+                    padding: 1em;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block {
+                    padding: 5px;
+                    border-radius: 3px;
+                    background: #fff;
+                    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+                  }
+
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_output_block tr.altrow td,
+                  .style2 .cheat_sheet_output_wrapper .cheat_sheet_note {
+                    background: #fff;
+                  }
+                </style>
+                <article>
+                  <table border="0" cellspacing="0" width="100%" cellpadding="0" class="cheat_sheet_output">
+                    <tr>
+                      <td width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_1">
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77031">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77031">pandas安装</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77031">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">conda install pandas</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">获得 pandas 的最佳方式是通过 conda</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">python3 -m pip install --upgrade pandas</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">通过 PyPI</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pip install
+                                    -i htt&#173;ps:&#173;//p&#173;ypi.tu&#173;na.t&#173;si&#173;ngh&#173;ua.e&#173;du.cn&#173;/si&#173;mpl&#173;e g&#173;event
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">使用清华镜像安装</div>
+                                </td>
+                              </tr>
+                            </table>
+                            <div class="cheat_sheet_note">
+                              <div style="padding: 3px 8px;">国内推荐使用&#173;清华镜像安装</div>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77032">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77032">关键缩写和包导入</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77032">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">任意的Pandas DataFr&#173;ame对象</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">s</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">任意的Pandas Series对象</div>
+                                </td>
+                              </tr>
+                            </table>
+                            <div class="cheat_sheet_note">
+                              <div style="padding: 3px 8px;">缩写</div>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77033">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77033">引入方法</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77033">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;"><code>import pandas as pd</code></div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">导入pand&#173;as并&#173;缩写为pd</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" colspan="2" style="
+">&nbsp;</td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;"><code>import numpy as np</code></div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">导入nump&#173;y并缩写为np</div>
+                                </td>
+                              </tr>
+                            </table>
+                            <div class="cheat_sheet_note">
+                              <div style="padding: 3px 8px;">常规导入</div>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77038">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77038">数据选取</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77038">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df[col]</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">根据列名，并&#173;以Se&#173;rie&#173;s的形式返回列</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df[[col1, col2]]</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">以DataF&#173;ram&#173;e形式返回多列</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">s.iloc[0]</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">按位置选取数据</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">s.loc[&#173;'in&#173;dex&#173;_one']</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">按索引选取数据</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.ilo&#173;c[0,:]</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回第一行</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.ilo&#173;c[0,0]</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回第一列的&#173;第一个元素</div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77039">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77039">数据清理</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77039">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.columns = ['a','&#173;b','c']</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">重命名列名</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.isn&#173;ull()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    检查Data&#173;Fra&#173;me对&#173;象中的&#173;空值，&#173;并返回&#173;一个B&#173;ool&#173;ean数组
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.not&#173;null()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    检查Data&#173;Fra&#173;me对&#173;象中的&#173;非空值&#173;，并返&#173;回一个&#173;Boo&#173;lean数组
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.dro&#173;pna()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">删除所有包含空值的行</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.dro&#173;pna&#173;(ax&#173;is=1)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">删除所有包含空值的列</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df.dro&#173;pna&#173;(ax&#173;is=&#173;1,t&#173;hre&#173;sh=n)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">删除所有小于&#173;n个非空值的行</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.fil&#173;lna(x)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">用x替换Da&#173;taF&#173;ram&#173;e对象&#173;中所有的空值</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">s.asty&#173;pe(&#173;float)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">将Serie&#173;s中的&#173;数据类&#173;型更改&#173;为fl&#173;oat类型
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">s.repl&#173;ace&#173;(1,&#173;'one')</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">用‘one’&#173;代替所&#173;有等于1的值</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    s.repl&#173;ace&#173;([1&#173;,3]&#173;,['&#173;one&#173;','&#173;thr&#173;ee'])
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">用'one'&#173;代替1&#173;，用'&#173;thr&#173;ee'代替3</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.ren&#173;ame&#173;(co&#173;lum&#173;ns=&#173;lambda
+                                    x: x + 1)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">批量更改列名</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df.ren&#173;ame&#173;(co&#173;lum&#173;ns=&#173;{'o&#173;ld_&#173;name': 'new_
+                                    name'})</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">选择性更改列名</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df.set&#173;_in&#173;dex&#173;('c&#173;olu&#173;mn_&#173;one')</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">更改索引列</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.ren&#173;ame&#173;(in&#173;dex&#173;=lambda x: x +
+                                    1)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">批量重命名索引</div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </section>
+                      </td>
+                      <td class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td>
+                      <td width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_2">
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_threecol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77034">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77034">导入数据</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77034">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_threecol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.rea&#173;d_c&#173;sv(&#173;fil&#173;ename)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">从CSV文件导入数据</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">1</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.rea&#173;d_t&#173;abl&#173;e(f&#173;ile&#173;name)
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">从限定分隔符&#173;的文本&#173;文件导入数据</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">2</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.rea&#173;d_e&#173;xce&#173;l(f&#173;ile&#173;name)
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">从Excel&#173;文件导入数据</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">3</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.rea&#173;d_s&#173;ql(&#173;query,
+                                    connec&#173;tio&#173;n_o&#173;bject)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">从SQL表/&#173;库导入数据</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">4</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.rea&#173;d_j&#173;son&#173;(js&#173;on_&#173;string)
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">从JSON格&#173;式的字&#173;符串导入数据</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">5</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.rea&#173;d_h&#173;tml&#173;(url)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    解析URL、&#173;字符串&#173;或者H&#173;TML&#173;文件，&#173;抽取其&#173;中的t&#173;ables表格</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">6</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.rea&#173;d_c&#173;lip&#173;board()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    从你的粘贴板&#173;获取内&#173;容，并&#173;传给r&#173;ead&#173;_ta&#173;ble()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">7</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.Dat&#173;aFr&#173;ame&#173;(dict)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">从字典对象导&#173;入数据&#173;，Ke&#173;y是列&#173;名，V&#173;alue是数据
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">8</div>
+                                </td>
+                              </tr>
+                            </table>
+                            <div class="cheat_sheet_note">
+                              <div style="padding: 3px 8px;">网上爬取表格&#173;一般使&#173;用方法&#173;6和方法2</div>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_threecol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77035">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77035">导出数据</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77035">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_threecol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">1</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">df.to_&#173;csv&#173;(fi&#173;lename)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">导出数据到CSV文件</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">2</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">df.to_&#173;exc&#173;el(&#173;fil&#173;ename)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">导出数据到E&#173;xcel文件</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">3</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">df.to_&#173;sql&#173;(ta&#173;ble&#173;_name,
+                                    connec&#173;tio&#173;n_o&#173;bject)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">导出数据到SQL表</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">4</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">df.to_&#173;jso&#173;n(f&#173;ile&#173;name)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_3" style="
+">
+                                  <div style="padding: 3px 8px;">以Json格&#173;式导出&#173;数据到文本文件</div>
+                                </td>
+                              </tr>
+                            </table>
+                            <div class="cheat_sheet_note">
+                              <div style="padding: 3px 8px;">一般文件名需要加<code>''</code>不知道为什么这里没加</div>
+                            </div>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77041">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77041">
+                            数据处理：F&#173;ilt&#173;er、&#173;Sor&#173;t和G&#173;roupBy</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77041">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df[df[col] &gt; 0.5]</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">选择col列&#173;的值大&#173;于0.5的行</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.sor&#173;t_v&#173;alu&#173;es(&#173;col1)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">按照列col&#173;1排序&#173;数据，&#173;默认升序排列</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.sor&#173;t_v&#173;alu&#173;es(&#173;col2,
+                                    ascend&#173;ing&#173;=False)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">按照列col&#173;1降序排列数据</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df.sor&#173;t_v&#173;alu&#173;es(&#173;[co&#173;l1,&#173;col2],
+                                    ascend&#173;ing&#173;=[T&#173;rue&#173;,Fa&#173;lse])</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">先按列col&#173;1升序&#173;排列，&#173;后按c&#173;ol2&#173;降序排列数据
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.gro&#173;upb&#173;y(col)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回一个按列&#173;col&#173;进行分&#173;组的G&#173;rou&#173;pby对象
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.gro&#173;upb&#173;y([&#173;col&#173;1,c&#173;ol2])
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回一个按多&#173;列进行&#173;分组的&#173;Gro&#173;upby对象</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.gro&#173;upb&#173;y(c&#173;ol1&#173;)[col2]</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回按列co&#173;l1进&#173;行分组&#173;后，列&#173;col2的均值</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df.piv&#173;ot_&#173;tab&#173;le(&#173;ind&#173;ex=&#173;col1,
+                                    values&#173;=[c&#173;ol2&#173;,col3], aggfun&#173;c=max)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    创建一个按列&#173;col&#173;1进行&#173;分组，&#173;并计算&#173;col&#173;2和c&#173;ol3&#173;的最大&#173;值的数据透视表
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df.gro&#173;upb&#173;y(c&#173;ol1&#173;).a&#173;gg(&#173;np.m&#173;ean)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回按列co&#173;l1分&#173;组的所&#173;有列的均值</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">data.a&#173;ppl&#173;y(n&#173;p.mean)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    对DataF&#173;ram&#173;e中的&#173;每一列&#173;应用函&#173;数np.mean</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">data.a&#173;ppl&#173;y(n&#173;p.m&#173;ax,&#173;axis=1)
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">对DataF&#173;ram&#173;e中的&#173;每一行&#173;应用函&#173;数np.max
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </section>
+                      </td>
+                      <td class="cheat_sheet_output_column_spacer" width="2%">&nbsp;</td>
+                      <td width="32%" valign="top" class="cheat_sheet_output_sortable cheat_sheet_output_column_3">
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77036">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77036">创建测试对象</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77036">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    pd.Dat&#173;aFr&#173;ame&#173;(np.ra&#173;ndo&#173;m.r&#173;and&#173;(20,5))</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">创建20行5&#173;列的随&#173;机数组&#173;成的D&#173;ata&#173;Frame对象
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">pd.Ser&#173;ies&#173;(my&#173;_list)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">从可迭代对象&#173;my_&#173;lis&#173;t创建&#173;一个S&#173;eries对象
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.index =
+                                    pd.dat&#173;e_r&#173;ang&#173;e('&#173;190&#173;0/1&#173;/30',
+                                    period&#173;s=d&#173;f.s&#173;hap&#173;e[0])</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">增加一个日期索引</div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77037">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77037">查看、检查数据</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77037">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.head(n)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看Data&#173;Fra&#173;me对&#173;象的前n行</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.tail(n)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看Data&#173;Fra&#173;me对&#173;象的最后n行</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.shape()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看行数和列数</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;"><a rel="nofollow" href="http://df.info"
+                                      target="_blank">http:/&#173;/df.info</a>()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看索引、数&#173;据类型&#173;和内存信息</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.des&#173;cribe()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看数值型列&#173;的汇总统计</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    s.valu&#173;e_c&#173;oun&#173;ts(&#173;dro&#173;pna&#173;=False)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看Seri&#173;es对&#173;象的唯&#173;一值和计数</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df.app&#173;ly(&#173;pd.S&#173;er&#173;ies.va&#173;lue&#173;_co&#173;unts)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看Data&#173;Fra&#173;me对&#173;象中每&#173;一列的&#173;唯一值和计数
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77042">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77042">数据合并</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77042">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df1.ap&#173;pen&#173;d(df2)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">将df2中的&#173;行添加&#173;到df1的尾部</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.con&#173;cat&#173;([df1, df2],a&#173;xis=1)</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">将df2中的&#173;列添加&#173;到df1的尾部</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">
+                                    df1.jo&#173;in(&#173;df2&#173;,on&#173;=co&#173;l1,&#173;how&#173;='i&#173;nner')
+                                  </div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">对df1的列&#173;和df&#173;2的列&#173;执行S&#173;QL形&#173;式的join
+                                  </div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </section>
+                        <section class="cheat_sheet_output_wrapper cheat_sheet_output_column_twocol"
+                          style="z-index: 30; page-break-inside: avoid;" id="block_77044">
+                          <h3 class="cheat_sheet_output_title" id="title_19845_77044">数据统计</h3>
+                          <div class="cheat_sheet_output_block" id="block_19845_77044">
+                            <table border="0" cellspacing="0" cellpadding="0" id="cheat_sheet_output_table"
+                              class="cheat_sheet_output_twocol">
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.des&#173;cribe()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">查看数据值列&#173;的汇总统计</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.mean()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回所有列的均值</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.corr()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回列与列之&#173;间的相关系数</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.count()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回每一列中&#173;的非空值的个数</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.max()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回每一列的最大值</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.min()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回每一列的最小值</div>
+                                </td>
+                              </tr>
+                              <tr class="altrow countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.med&#173;ian()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回每一列的中位数</div>
+                                </td>
+                              </tr>
+                              <tr class="countrow">
+                                <td valign="top" class="cheat_sheet_output_cell_1" style="
+">
+                                  <div style="padding: 3px 8px;">df.std()</div>
+                                </td>
+                                <td valign="top" class="cheat_sheet_output_cell_2" style="
+">
+                                  <div style="padding: 3px 8px;">返回每一列的标准差</div>
+                                </td>
+                              </tr>
+                            </table>
+                          </div>
+                        </section>
+                      </td>
+                    </tr>
+                  </table>
+                  <div id="tag_list" class="tac" style="padding: 40px 100px 0; line-height: 2.5;"> <span
+                      style="color: #999; white-space: nowrap;"><i class="fa fa-tag"></i> <a rel="tag" class="tag"
+                        href="/tag/python/">python</a></span> &nbsp; &nbsp; <span
+                      style="color: #999; white-space: nowrap;"><i class="fa fa-tag"></i> <a rel="tag" class="tag"
+                        href="/tag/pandas/">pandas</a></span></div>
+                </article>
+                <div class="clear" style="margin-top: 50px;"></div>
+                <div class="clear" style="margin-bottom: 50px;"></div>
+                <div class="clear"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
