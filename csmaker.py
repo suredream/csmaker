@@ -82,7 +82,7 @@ class Handler(watchdog.events.PatternMatchingEventHandler):
                                                              ignore_directories=True, case_sensitive=False)
   
     def on_created(self, event):
-        print("Watchdog received created event - % s." % event.src_path)
+        print("Watchdog received created event - % s" % event.src_path)
         # Event is created, you can process it now
         try:
             doit(event.src_path)
@@ -90,7 +90,7 @@ class Handler(watchdog.events.PatternMatchingEventHandler):
             pass
   
     def on_modified(self, event):
-        print("Watchdog received modified event - % s." % event.src_path)
+        print("Watchdog received modified event - % s" % event.src_path)
         # Event is modified, you can process it now
         try:
             doit(event.src_path)

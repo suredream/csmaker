@@ -1,17 +1,34 @@
 concepts:
-  Apps:
-    Project: zotero or github
-    DB Entry: zotero
-    Note: zotero
-    Page: obsidian
-    
-  Workflow:
-    Collection: Save to Zotero
+  ticktick:
+    Overview: 全景闹钟
+    Today: "快捷清单 < 5"
+    Inbox: "目标/关系人/时间点"
+    Task: "设计/拆分/评估/调整"
+    Task-eval: "简单/可行/有效"
+    Commit: 关注行为，而非成果
+  zotero:
+    Entry: reference + notes
+    DB: fields + notes
+  obsidian:
+    Page: self-explanatory content
+  calendar:
+    meeting: 观察他人
+    Tagging: Ongoing Archive
+    Archive: ":DELETE:"
+    GTD: obsidian task
+  readlist:
+    列表: 碎片时间 
     Tagging: Ongoing Archive
     Archive: ":DELETE:"
     GTD: obsidian task
 src:
-  blog:
+  Zotero:
+    New Note: Cmd+Shift+O
+    Toggle Tag Selection: Cmd+Shift+T
+    Assign Color: 1 to 6
+    Expand/Collapse Collections: +/-
+    Format Header: Ctrl+Alt+1/6
+  ar Zotero:
     ruanyifeng: https://www.ruanyifeng.com/blog/
     medium: https://medium.com/
   Collect Guide:
